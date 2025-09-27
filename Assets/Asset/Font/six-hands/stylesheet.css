@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'Six Hands Chalk';
+    src: url('SixHandsChalk.eot');
+    src: local('Six Hands Chalk'), local('SixHandsChalk'),
+        url('SixHandsChalk.eot?#iefix') format('embedded-opentype'),
+        url('SixHandsChalk.woff2') format('woff2'),
+        url('SixHandsChalk.woff') format('woff'),
+        url('SixHandsChalk.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Six Hands Brush';
+    src: url('SixHandsBrush.eot');
+    src: local('Six Hands Brush'), local('SixHandsBrush'),
+        url('SixHandsBrush.eot?#iefix') format('embedded-opentype'),
+        url('SixHandsBrush.woff2') format('woff2'),
+        url('SixHandsBrush.woff') format('woff'),
+        url('SixHandsBrush.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Six Hands';
+    src: url('SixHandsBlack.eot');
+    src: local('Six Hands Black'), local('SixHandsBlack'),
+        url('SixHandsBlack.eot?#iefix') format('embedded-opentype'),
+        url('SixHandsBlack.woff2') format('woff2'),
+        url('SixHandsBlack.woff') format('woff'),
+        url('SixHandsBlack.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Six Hands Marker';
+    src: url('SixHandsMarker.eot');
+    src: local('Six Hands Marker'), local('SixHandsMarker'),
+        url('SixHandsMarker.eot?#iefix') format('embedded-opentype'),
+        url('SixHandsMarker.woff2') format('woff2'),
+        url('SixHandsMarker.woff') format('woff'),
+        url('SixHandsMarker.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Six Hands Condensed';
+    src: url('SixHandsCondensed.eot');
+    src: local('Six Hands Condensed'), local('SixHandsCondensed'),
+        url('SixHandsCondensed.eot?#iefix') format('embedded-opentype'),
+        url('SixHandsCondensed.woff2') format('woff2'),
+        url('SixHandsCondensed.woff') format('woff'),
+        url('SixHandsCondensed.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Six Hand Rough';
+    src: url('SixHandRough.eot');
+    src: local('Six Hand Rough'), local('SixHandRough'),
+        url('SixHandRough.eot?#iefix') format('embedded-opentype'),
+        url('SixHandRough.woff2') format('woff2'),
+        url('SixHandRough.woff') format('woff'),
+        url('SixHandRough.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
