@@ -23,6 +23,13 @@ public class MainmenuManager : MonoBehaviour
     [SerializeField] Button modeARStartButton;
     [SerializeField] string sceneARName;
 
+    [Header("Mode Latihan Components")]
+    [SerializeField] GameObject modeLatihanPanel;
+    [SerializeField] GameObject modeLatihanScorePanel;
+    [SerializeField] Button modeLatihanStartButton;
+    [SerializeField] Button modeLatihanBackButton;
+
+
     [Header("SFX Clip")]
     [SerializeField] AudioClip panelOpeningSFX;
     [SerializeField] AudioClip buttonClickSFX;
@@ -36,7 +43,7 @@ public class MainmenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void StartScreen()
@@ -60,7 +67,7 @@ public class MainmenuManager : MonoBehaviour
 
     public void OpenSetting()
     {
-        settingButton.interactable = false;        
+        settingButton.interactable = false;
         AudioManager.instance.PlaySound(buttonClickSFX);
         AudioManager.instance.PlaySound(panelOpeningSFX);
         settingPanel.SetActive(true);
@@ -93,15 +100,15 @@ public class MainmenuManager : MonoBehaviour
             modeARPanel.SetActive(true);
             LeanTween.moveLocalX(modeARPanel, 0f, 1f).setEaseOutExpo().setOnComplete(() =>
             {
-                modeARBackButton.interactable = true;                
+                modeARBackButton.interactable = true;
             });
         });
-        
+
     }
 
     public void CloseModeAR()
     {
-        modeARBackButton.interactable = false;        
+        modeARBackButton.interactable = false;
         AudioManager.instance.PlaySound(buttonClickSFX);
         LeanTween.moveLocalX(modeARPanel, -2000f, 1f).setEaseInExpo().setOnComplete(() =>
         {
@@ -110,6 +117,56 @@ public class MainmenuManager : MonoBehaviour
             modeARPanel.SetActive(false);
             mainMenuPanel.SetActive(true);
             LeanTween.moveLocalX(mainMenuPanel, 0f, 1f).setEaseOutExpo();
+        });
+    }
+
+    public void OpenModeLatihan()
+    {
+        modeLatihanStartButton.interactable = false;
+        AudioManager.instance.PlaySound(buttonClickSFX);
+        LeanTween.moveLocalX(mainMenuPanel, 2000f, 1f).setEaseInExpo().setOnComplete(() =>
+        {
+            AudioManager.instance.PlaySound(panelOpeningSFX);
+            mainMenuPanel.SetActive(false);
+            modeLatihanPanel.SetActive(true);
+            LeanTween.moveLocalX(modeLatihanPanel, 0f, 1f).setEaseOutExpo().setOnComplete(() =>
+            {
+                modeLatihanStartButton.interactable = true;
+                modeLatihanBackButton.interactable = false;
+            });
+        });
+    }
+
+    public void OpenScoreLatihan()
+    {        
+        AudioManager.instance.PlaySound(panelOpeningSFX);
+        modeLatihanScorePanel.SetActive(true);
+        LeanTween.moveLocalX(modeLatihanPanel, 2000f, 1f).setEaseOutExpo().setOnComplete(() =>
+        {
+            LeanTween.moveLocalY(modeLatihanScorePanel, 0f, 1f).setEaseOutExpo().setOnComplete(() =>
+            {
+                // Score panel is fully opened
+                modeLatihanBackButton.interactable = true;
+            });
+        });
+        
+    }
+
+    public void CloseModeLatihan() 
+    { 
+        modeLatihanBackButton.interactable = false;
+        AudioManager.instance.PlaySound(buttonClickSFX);
+        LeanTween.moveLocalY(modeLatihanScorePanel, 2000f, 1f).setEaseInExpo().setOnComplete(() =>
+        {
+            modeLatihanStartButton.interactable = false;
+            AudioManager.instance.PlaySound(panelOpeningSFX);
+            modeLatihanPanel.SetActive(false);
+            mainMenuPanel.SetActive(true);
+            LeanTween.moveLocalX(mainMenuPanel, 0f, 1f).setEaseOutExpo().setOnComplete(() =>
+            {
+                modeLatihanStartButton.interactable = true;
+                modeARButton.interactable = true;
+            });
         });
     }
 }
