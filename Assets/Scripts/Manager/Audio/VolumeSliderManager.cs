@@ -6,7 +6,7 @@ public class VolumeSliderManager : MonoBehaviour
     [Header("Sliders")]
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider soundSlider;
-
+    
     private void Start()
     {
         // Set the slider values to the values stored in PlayerPrefs
